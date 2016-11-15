@@ -2,14 +2,12 @@ runtime: python27
 threadsafe: true
 
 handlers:
-- url: /css
-  static_dir: css
+- url: /(.*\.css)
+  mime_type: text/css
+  static_files: css/\1
+  upload: css/(.*\.css)
 
-- url: /img
-  static_dir: img
-
-- url: /js
-  static_dir: js
-
-- url: /.*
-  script: index.html
+# site root
+- url: /
+  static_files: index.html
+  upload: index.html
