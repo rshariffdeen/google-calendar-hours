@@ -1,0 +1,15 @@
+runtime: python27
+threadsafe: true
+
+handlers:
+- url: /css
+  static_dir: css
+
+- url: /img
+  static_dir: img
+
+- url: /js
+  static_dir: js
+
+- url: /.*
+  script: index.html
